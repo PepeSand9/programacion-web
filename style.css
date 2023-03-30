@@ -1,0 +1,114 @@
+body {background-color:#f8f7f7}
+h1{
+    color:white;
+    font-size: 100px;
+    margin-left: 20px;
+    padding: 20px;
+    font-style:oblique;
+}
+
+h2{
+    text-align:center;
+    font-size: 40px;
+}
+
+p{
+    color: white;
+    margin-left: 20px;
+}
+/*/* Falta experimentr con class, id y margin-padding y position de las cosas /*/
+/*/*Div principal/*/
+.Principal{
+    background: rgb(101, 14, 14);
+    height: 1000px;
+    width: 100%;
+    padding: 10px;
+}
+/*/*Barra de navegacion/*/
+#barra {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+#opciones {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+
+#jugadores{
+    color:white
+}
+
+.links{
+    margin: 20px;
+}
+
+.contacto{background-image: url("./images/cncha\ panoramica.jpg") ;
+    
+    height: 400px;
+    padding: 20px;
+}
+
+#texto_cont{
+    color:#111;
+    position: relative;
+    top: 100px
+    
+    ;
+}
+
+#PepeSand{
+    padding-left: 20px;
+}
+
+.formulario{margin-left: 100px;
+margin-top: 50px;}
+
+#consultorio{
+    height:30px;
+    width: 400px;
+}
+
+label{
+    color: white;
+    background-color: black;
+}
+
+li{
+    color: white;
+    font-size: 20px;
+
+}
+
+#Instagram{
+        background-color: white;
+        position: fixed;
+        bottom:10px;
+        right:10px;
+    }
+
+.centrado{
+    text-align: center;
+}
+
+.recuadroLorem{
+    width: 650px;
+    border: 2px solid black;
+    position: relative;
+    left: 400px;
+    bottom: 50px
+}
