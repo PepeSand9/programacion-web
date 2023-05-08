@@ -1,4 +1,8 @@
 body {background-color:#f8f7f7}
+*{
+  font-family: 'Noto Serif', serif;
+  
+}
 h1{
     color:white;
     font-size: 100px;
@@ -26,13 +30,7 @@ p{
 }
 
 /*/*Barra de navegacion/*/
-#barra {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
+
   
 .opciones {
     float: left;
@@ -151,7 +149,7 @@ li{
     padding: 0 20px;
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
   }
   
   .logo img {
@@ -307,3 +305,107 @@ footer {
   font-size: 3rem;
 }
 
+.logolanus {
+  position: absolute;
+  height:40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.box {
+  position: relative;
+  
+  
+
+}
+
+.box img {
+  width: 100%;
+  
+  transition: filter 0.3s ease-in-out;
+  object-fit: cover;
+}
+
+.box:hover img.blur {
+  filter: blur(3px);
+}
+
+.description {
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.box:hover .description {
+  opacity: 1;
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.5s ease;
+}
+
+.gallery .caption {
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+  filter: blur(5px);
+}
+
+.gallery img:hover + .caption {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
