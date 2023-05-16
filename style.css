@@ -1,4 +1,4 @@
-body {background-color:#f8f7f7}
+body {background-color:#ffffff}
 *{
   font-family: 'Noto Serif', serif;
   
@@ -149,7 +149,7 @@ li{
     padding: 0 20px;
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 7;
   }
   
   .logo img {
@@ -362,7 +362,7 @@ footer {
 }
 
 
-.gallery {
+/* .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -407,5 +407,82 @@ footer {
   .gallery {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
+  }
+} */
+
+
+.portafolio{
+  background: #f2f2f2;
+  margin-top: 64px;
+  padding-top: 16px;
+}
+
+/* Estilos base para la galería */
+.galeria-port{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.imagen-port{
+  width: 24%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.imagen-port > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hover-galeria{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform: scale(0);
+  background: rgba(125, 3, 3, 0.7);
+  transition: transform .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hover-galeria img{
+  width: 50px;
+}
+
+.hover-galeria p{
+  color: rgb(250, 250, 250);
+}
+
+.imagen-port:hover .hover-galeria{
+  transform: scale(1);
+}
+
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .galeria-port {
+    flex-direction: column;
+  }
+  
+  .imagen-port {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .galeria-port {
+    flex-wrap: wrap;
+  }
+  .imagen-port {
+    width: calc(33.33% - 20px);
   }
 }
