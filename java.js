@@ -1,7 +1,7 @@
 let array1= [1,2,3]
 
 console.log(array1)
-console.log(array[0]);
+console.log(array1[0]);
 
 const ARRAY2 = [1]
 
