@@ -169,12 +169,49 @@ function comprarButtonClicked() {
 //     }
 //   });
 
-function finalizarCompra(){
-    if (shoppingCartTotal.length===0) {
-        alert("No hay items en el Carrito de Compras");
-        return;
-    }
-    var modalCompra = new boostrap.Modal(document.getElementById('modalCompra'));
-    modalCompra.show();
+// function finalizarCompra(){
+//     if (shoppingCartItemPrice.length===0) {
+//         alert("No hay items en el Carrito de Compras");
+//         return;
+//     }
+//     var modalCompra = new boostrap.Modal(document.getElementById('modalCompra'));
+//     modalCompra.show();
 
+// }
+
+
+comprarButton.addEventListener('click', comprarButtonClicked);
+
+// Resto del código...
+
+function comprarButtonClicked() {
+  if (shoppingCartItemsContainer.children.length === 0) {
+    alert("No hay items en el Carrito de Compras");
+    return;
+  }
+  else finalizarCompra();
 }
+
+function finalizarCompra() {
+  if (shoppingCartItemsContainer.children.length === 0) {
+    return;
+  }
+
+  var modalCompra = new bootstrap.Modal(document.getElementById('modalCompra'));
+
+  var botonComprarModal = document.querySelector('#modalCompra .modal-footer .btn-primary');
+  botonComprarModal.addEventListener('click', function() {
+    alert('Gracias por su Compra');
+    modalCompra.hide();
+    vaciarCarrito();
+  });
+
+  modalCompra.show();
+}
+
+function vaciarCarrito() {
+  shoppingCartItemsContainer.innerHTML = '';
+  updateShoppingCartTotal();
+}
+  
+
