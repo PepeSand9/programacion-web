@@ -257,13 +257,43 @@
               <div class="shopping-cart-total d-flex align-items-center">
                   <p class="mb-0">Total――――――――――――――――――――― </p>
                   <p class="ml-4 mb-0 shoppingCartTotal">0$</p>
-                  <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
-                      data-target="#comprarModal">Comprar</button>
+                  <button class="btn btn-success ml-auto comprarButton" type="button" onclick="finalizarCompra()">Comprar</button>
               </div>
           </div>
       </div>
 
   </section> 
+
+  <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCompraLabel">Datos de compra</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido:</label>
+                        <input type="text" class="form-control" id="apellido" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="numeroTarjeta" class="form-label">Número de tarjeta(16 digitos):</label>
+                        <input type="text" class="form-control" id="numeroTarjeta" required pattern="[0-9]{16}">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="completarCompra()">Comprar</button>
+            </div>
+        </div>
+    </div>
+  </div>
 <!-- --------------------------------------------------------------- -->
     <footer>
       <div id="contacto" class="container">

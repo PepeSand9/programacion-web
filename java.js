@@ -156,14 +156,25 @@ function quantityChanged(event) {
 function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = '';
   updateShoppingCartTotal();
+  finalizarCompra();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const comprarButton = document.querySelector('.comprarButton');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const comprarButton = document.querySelector('.comprarButton');
   
-    comprarButton.addEventListener('click', comprarClicked);
+//     comprarButton.addEventListener('click', comprarClicked);
   
-    function comprarClicked() {
-      alert('¡Su compra se ha realizado con éxito!');
+//     function comprarClicked() {
+//       alert('¡Su compra se ha realizado con éxito!');
+//     }
+//   });
+
+function finalizarCompra(){
+    if (shoppingCartTotal.length===0) {
+        alert("No hay items en el Carrito de Compras");
+        return;
     }
-  });
+    var modalCompra = new boostrap.Modal(document.getElementById('modalCompra'));
+    modalCompra.show();
+
+}
