@@ -157,3 +157,13 @@ function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = '';
   updateShoppingCartTotal();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const comprarButton = document.querySelector('.comprarButton');
+  
+    comprarButton.addEventListener('click', comprarClicked);
+  
+    function comprarClicked() {
+      alert('¡Su compra se ha realizado con éxito!');
+    }
+  });
